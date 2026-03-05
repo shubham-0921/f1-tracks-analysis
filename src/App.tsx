@@ -89,7 +89,7 @@ export default function App() {
 
       <footer className="border-t border-f1border mt-16 py-8 text-center text-gray-600 text-sm">
         <p>
-          F1 Circuit Guide · 2025 Season ·{' '}
+          F1 Circuit Guide · 2026 Season ·{' '}
           <a
             href="https://www.formula1.com"
             target="_blank"

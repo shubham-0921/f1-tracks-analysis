@@ -60,10 +60,23 @@ export default function CircuitCard({ circuit }: CircuitCardProps) {
               <p className="text-gray-400 text-sm">{circuit.city}, {circuit.country}</p>
             </div>
           </div>
-          {/* Length badge */}
-          <div className="flex-shrink-0 text-right">
-            <span className="text-f1red font-black text-2xl">{circuit.lengthKm}</span>
-            <span className="text-gray-500 text-xs block">km/lap</span>
+          {/* Circuit layout image + length */}
+          <div className="flex-shrink-0 flex flex-col items-end gap-2">
+            {circuit.imageUrl && (
+              <div className="w-24 h-16 rounded-lg overflow-hidden bg-black/40 border border-white/10 flex items-center justify-center p-1">
+                <img
+                  src={circuit.imageUrl}
+                  alt={`${circuit.name} layout`}
+                  className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity"
+                  style={{ filter: 'invert(1) sepia(1) saturate(2) hue-rotate(320deg) brightness(0.85)' }}
+                  onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                />
+              </div>
+            )}
+            <div className="text-right">
+              <span className="text-f1red font-black text-2xl">{circuit.lengthKm}</span>
+              <span className="text-gray-500 text-xs block">km/lap</span>
+            </div>
           </div>
         </div>
 

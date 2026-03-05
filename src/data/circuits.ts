@@ -23,6 +23,7 @@ export interface Circuit {
   references: { label: string; url: string }[];
   calendarRound: number;
   historicOnly?: boolean;
+  imageUrl?: string;
 }
 
 export const circuits: Circuit[] = [
@@ -66,6 +67,7 @@ export const circuits: Circuit[] = [
     ],
     calendarRound: 0,
     historicOnly: true,
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Buddh_International_Circuit.svg',
   },
   {
     id: 'bahrain',
@@ -100,9 +102,10 @@ export const circuits: Circuit[] = [
     references: [
       { label: 'Official Circuit Website', url: 'https://www.bahraingp.com' },
       { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Bahrain_International_Circuit' },
-      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2025/bahrain' },
+      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2026/bahrain' },
     ],
-    calendarRound: 1,
+    calendarRound: 4,
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bahrain_International_Circuit--2004.svg',
   },
   {
     id: 'jeddah',
@@ -137,9 +140,10 @@ export const circuits: Circuit[] = [
     references: [
       { label: 'Official GP Site', url: 'https://www.saudiarabiangp.com' },
       { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Jeddah_Corniche_Circuit' },
-      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2025/saudi-arabia' },
+      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2026/saudi-arabia' },
     ],
-    calendarRound: 2,
+    calendarRound: 5,
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Jeddah_Corniche_Circuit.svg',
   },
   {
     id: 'albert-park',
@@ -174,9 +178,10 @@ export const circuits: Circuit[] = [
     references: [
       { label: 'Official GP Site', url: 'https://www.grandprix.com.au' },
       { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Albert_Park_Circuit' },
-      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2025/australia' },
+      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2026/australia' },
     ],
-    calendarRound: 3,
+    calendarRound: 1,
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Albert_Park_circuit_2022.svg',
   },
   {
     id: 'suzuka',
@@ -211,9 +216,10 @@ export const circuits: Circuit[] = [
     references: [
       { label: 'Official Circuit Website', url: 'https://www.suzukacircuit.jp/eng' },
       { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Suzuka_International_Racing_Course' },
-      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2025/japan' },
+      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2026/japan' },
     ],
-    calendarRound: 4,
+    calendarRound: 3,
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Suzuka_circuit_2005.svg',
   },
   {
     id: 'shanghai',
@@ -247,9 +253,10 @@ export const circuits: Circuit[] = [
       'Constructed in under two years from 2002 to 2004, Shanghai International Circuit was built on what was formerly swampland in the Jiading District. The circuit required 40,000 concrete piles driven into the ground as foundations. Designed by Hermann Tilke, it was one of the most expensive circuits ever built at the time of construction. The circuit underwent major resurfacing for its 2024 return after a COVID-imposed absence.',
     references: [
       { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Shanghai_International_Circuit' },
-      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2025/china' },
+      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2026/china' },
     ],
-    calendarRound: 5,
+    calendarRound: 2,
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Shanghai_International_Circuit.svg',
   },
   {
     id: 'miami',
@@ -284,9 +291,10 @@ export const circuits: Circuit[] = [
     references: [
       { label: 'Official GP Site', url: 'https://www.f1miamigp.com' },
       { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Miami_International_Autodrome' },
-      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2025/miami' },
+      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2026/miami' },
     ],
     calendarRound: 6,
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Miami_International_Autodrome_circuit.svg',
   },
   {
     id: 'imola',
@@ -321,9 +329,11 @@ export const circuits: Circuit[] = [
     references: [
       { label: 'Official Circuit Website', url: 'https://www.autodromoimola.it' },
       { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Autodromo_Enzo_e_Dino_Ferrari' },
-      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2025/emilia-romagna' },
+      { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Autodromo_Enzo_e_Dino_Ferrari' },
     ],
-    calendarRound: 7,
+    calendarRound: 0,
+    historicOnly: true,
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Imola_circuit_2007.svg',
   },
   {
     id: 'monaco',
@@ -358,9 +368,10 @@ export const circuits: Circuit[] = [
     references: [
       { label: 'Official GP Site', url: 'https://www.acm.mc' },
       { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Circuit_de_Monaco' },
-      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2025/monaco' },
+      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2026/monaco' },
     ],
     calendarRound: 8,
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Circuit_de_Monaco.svg',
   },
   {
     id: 'canada',
@@ -395,9 +406,10 @@ export const circuits: Circuit[] = [
     references: [
       { label: 'Official GP Site', url: 'https://www.gpcanada.ca' },
       { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Circuit_Gilles_Villeneuve' },
-      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2025/canada' },
+      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2026/canada' },
     ],
-    calendarRound: 9,
+    calendarRound: 7,
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Circuit_Gilles_Villeneuve_2011.svg',
   },
   {
     id: 'barcelona',
@@ -432,9 +444,10 @@ export const circuits: Circuit[] = [
     references: [
       { label: 'Official Circuit Website', url: 'https://www.circuitcat.com' },
       { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Circuit_de_Barcelona-Catalunya' },
-      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2025/spain' },
+      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2026/spain' },
     ],
-    calendarRound: 10,
+    calendarRound: 9,
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Circuit_de_Barcelona-Catalunya_2009.svg',
   },
   {
     id: 'red-bull-ring',
@@ -469,9 +482,10 @@ export const circuits: Circuit[] = [
     references: [
       { label: 'Official Circuit Website', url: 'https://www.redbullring.com' },
       { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Red_Bull_Ring' },
-      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2025/austria' },
+      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2026/austria' },
     ],
-    calendarRound: 11,
+    calendarRound: 10,
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Red_Bull_Ring_2011.svg',
   },
   {
     id: 'silverstone',
@@ -506,9 +520,10 @@ export const circuits: Circuit[] = [
     references: [
       { label: 'Official Circuit Website', url: 'https://www.silverstone.co.uk' },
       { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Silverstone_Circuit' },
-      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2025/great-britain' },
+      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2026/great-britain' },
     ],
-    calendarRound: 12,
+    calendarRound: 11,
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Silverstone_circuit_2010.svg',
   },
   {
     id: 'hungaroring',
@@ -543,9 +558,10 @@ export const circuits: Circuit[] = [
     references: [
       { label: 'Official Circuit Website', url: 'https://www.hungaroring.hu' },
       { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Hungaroring' },
-      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2025/hungary' },
+      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2026/hungary' },
     ],
     calendarRound: 13,
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Hungaroring_2009.svg',
   },
   {
     id: 'spa',
@@ -580,9 +596,10 @@ export const circuits: Circuit[] = [
     references: [
       { label: 'Official Circuit Website', url: 'https://www.spa-francorchamps.be' },
       { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Circuit_de_Spa-Francorchamps' },
-      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2025/belgium' },
+      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2026/belgium' },
     ],
-    calendarRound: 14,
+    calendarRound: 12,
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Spa-Francorchamps_2004.svg',
   },
   {
     id: 'zandvoort',
@@ -617,9 +634,10 @@ export const circuits: Circuit[] = [
     references: [
       { label: 'Official Circuit Website', url: 'https://www.circuitzandvoort.nl' },
       { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Circuit_Zandvoort' },
-      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2025/netherlands' },
+      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2026/netherlands' },
     ],
-    calendarRound: 15,
+    calendarRound: 14,
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Circuit_Zandvoort_2020.svg',
   },
   {
     id: 'monza',
@@ -654,9 +672,10 @@ export const circuits: Circuit[] = [
     references: [
       { label: 'Official Circuit Website', url: 'https://www.monzanet.it' },
       { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Monza_Circuit' },
-      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2025/italy' },
+      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2026/italy' },
     ],
-    calendarRound: 16,
+    calendarRound: 15,
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Monza_track_map.svg',
   },
   {
     id: 'baku',
@@ -691,9 +710,10 @@ export const circuits: Circuit[] = [
     references: [
       { label: 'Official GP Site', url: 'https://www.bakucitycircuit.com' },
       { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Baku_City_Circuit' },
-      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2025/azerbaijan' },
+      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2026/azerbaijan' },
     ],
     calendarRound: 17,
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Baku_City_Circuit_2016.svg',
   },
   {
     id: 'singapore',
@@ -728,9 +748,10 @@ export const circuits: Circuit[] = [
     references: [
       { label: 'Official GP Site', url: 'https://www.singaporegp.sg' },
       { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Marina_Bay_Street_Circuit' },
-      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2025/singapore' },
+      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2026/singapore' },
     ],
     calendarRound: 18,
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Singapore_street_circuit_2010.svg',
   },
   {
     id: 'cota',
@@ -765,9 +786,10 @@ export const circuits: Circuit[] = [
     references: [
       { label: 'Official Circuit Website', url: 'https://www.circuitoftheamericas.com' },
       { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Circuit_of_the_Americas' },
-      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2025/united-states' },
+      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2026/united-states' },
     ],
     calendarRound: 19,
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Circuit_of_the_Americas.svg',
   },
   {
     id: 'mexico',
@@ -802,9 +824,10 @@ export const circuits: Circuit[] = [
     references: [
       { label: 'Official GP Site', url: 'https://www.mexicograndprix.mx' },
       { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Autodromo_Hermanos_Rodriguez' },
-      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2025/mexico' },
+      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2026/mexico' },
     ],
     calendarRound: 20,
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Aut%C3%B3dromo_Hermanos_Rodr%C3%ADguez_2015.svg',
   },
   {
     id: 'interlagos',
@@ -839,9 +862,10 @@ export const circuits: Circuit[] = [
     references: [
       { label: 'Official GP Site', url: 'https://www.gpbrasil.com.br' },
       { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Autodromo_Jose_Carlos_Pace' },
-      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2025/brazil' },
+      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2026/brazil' },
     ],
     calendarRound: 21,
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Circuit_Interlagos.svg',
   },
   {
     id: 'las-vegas',
@@ -876,9 +900,10 @@ export const circuits: Circuit[] = [
     references: [
       { label: 'Official GP Site', url: 'https://www.f1lasvegas.com' },
       { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Las_Vegas_Street_Circuit' },
-      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2025/las-vegas' },
+      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2026/las-vegas' },
     ],
     calendarRound: 22,
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Las_Vegas_Street_Circuit_2023.svg',
   },
   {
     id: 'losail',
@@ -913,9 +938,10 @@ export const circuits: Circuit[] = [
     references: [
       { label: 'Official Circuit Website', url: 'https://www.qatarmotorsport.qa' },
       { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Losail_International_Circuit' },
-      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2025/qatar' },
+      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2026/qatar' },
     ],
     calendarRound: 23,
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Losail_circuit.svg',
   },
   {
     id: 'yas-marina',
@@ -950,15 +976,55 @@ export const circuits: Circuit[] = [
     references: [
       { label: 'Official GP Site', url: 'https://www.yasmarinacircuit.com' },
       { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Yas_Marina_Circuit' },
-      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2025/abu-dhabi' },
+      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2026/abu-dhabi' },
     ],
     calendarRound: 24,
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Yas_Marina_circuit_2021.svg',
+  },
+  {
+    id: 'madrid',
+    name: 'IFEMA Madrid Street Circuit',
+    shortName: 'Spain (Madrid)',
+    country: 'Spain',
+    city: 'Madrid',
+    flag: '🇪🇸',
+    lengthKm: 5.47,
+    lapRecord: 'TBD',
+    lapRecordHolder: '—',
+    lapRecordYear: 2026,
+    turns: 20,
+    builtYear: 2026,
+    firstF1Race: 2026,
+    designer: 'Tilke Engineers & Architects',
+    contractor: 'IFEMA Madrid / Madrid City Council',
+    type: 'street',
+    direction: 'clockwise',
+    altitudeM: 667,
+    capacity: 110000,
+    iconicFeatures: [
+      'Brand new for 2026 — first F1 race in Madrid since the Circuito del Jarama hosted the Spanish GP in 1981',
+      'Located at and around the IFEMA Madrid congress and exhibition centre, adjacent to Madrid-Barajas Airport',
+      'The highest-altitude street circuit on the F1 calendar at 667 metres above sea level',
+      'Circuit passes through the IFEMA exhibition halls and outdoor plazas — a first for F1',
+      'Madrid joins Barcelona on the 2026 calendar, giving Spain two Grand Prix for the first time since 1997',
+      'The layout includes a long main straight approaching 1 km and multiple DRS zones',
+      'Designed to be permanently configured for annual use — not a fully temporary setup',
+    ],
+    history:
+      'The IFEMA Madrid Street Circuit was confirmed by Formula 1 in June 2023 following a formal agreement between Liberty Media, the Madrid City Council, and the regional government of the Community of Madrid. Designed by Hermann Tilke\'s firm, the circuit threads through the IFEMA Madrid trade fair complex on the northeastern edge of the city near Barajas Airport. Madrid last hosted a Formula 1 race at the Circuito del Jarama in 1981. The new circuit was added to the 2026 calendar as the Spanish Grand Prix at Madrid (Round 16), running alongside the traditional Barcelona Catalunya race (Round 9) — a unique arrangement giving Spain two Grands Prix.',
+    references: [
+      { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/IFEMA_Madrid_Street_Circuit' },
+      { label: 'F1 Circuit Guide', url: 'https://www.formula1.com/en/racing/2026/spain-madrid' },
+      { label: 'Madrid GP Official Site', url: 'https://www.madridgp.com' },
+    ],
+    calendarRound: 16,
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/IFEMA_Madrid_Street_Circuit.svg',
   },
 ];
 
 export const continents: Record<string, string[]> = {
   'Middle East': ['bahrain', 'jeddah', 'baku', 'losail', 'yas-marina'],
-  'Europe': ['imola', 'monaco', 'barcelona', 'red-bull-ring', 'silverstone', 'hungaroring', 'spa', 'zandvoort', 'monza'],
+  'Europe': ['imola', 'monaco', 'barcelona', 'madrid', 'red-bull-ring', 'silverstone', 'hungaroring', 'spa', 'zandvoort', 'monza'],
   'Asia-Pacific': ['suzuka', 'shanghai', 'singapore', 'buddh'],
   'Americas': ['miami', 'canada', 'cota', 'mexico', 'interlagos', 'las-vegas'],
   'Oceania': ['albert-park'],

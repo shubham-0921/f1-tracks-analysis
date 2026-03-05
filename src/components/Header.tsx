@@ -12,21 +12,21 @@ export default function Header() {
           </div>
           <div>
             <p className="text-f1red text-sm font-bold tracking-[0.3em] uppercase mb-1">
-              2025 Season
+              2026 Season
             </p>
             <h1 className="text-3xl md:text-5xl font-black text-white leading-tight tracking-tight">
               Formula 1<br />
               <span className="text-f1red">Circuit Guide</span>
             </h1>
             <p className="mt-3 text-gray-400 text-base md:text-lg max-w-2xl">
-              Every circuit on the 2025 F1 calendar — history, infrastructure, designers, and the stories
+              Every circuit on the 2026 F1 calendar — history, infrastructure, designers, and the stories
               behind the most iconic stretches of asphalt in motorsport.
             </p>
             <div className="flex flex-wrap gap-4 mt-5">
               <Stat value="24" label="Circuits" />
-              <Stat value="17" label="Countries" />
+              <Stat value="18" label="Countries" />
               <Stat value="1920" label="Oldest built" />
-              <Stat value="2023" label="Newest built" />
+              <Stat value="2026" label="Newest built" />
             </div>
           </div>
         </div>
