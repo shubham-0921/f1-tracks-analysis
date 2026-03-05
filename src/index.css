@@ -12,7 +12,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #0a0a0a;
+  background-color: #080d18;
   font-family: 'Inter', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
@@ -52,12 +52,12 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #111;
+  background: #080d18;
 }
 ::-webkit-scrollbar-thumb {
-  background: #2a2a2a;
+  background: #1a2f50;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #e10600/60;
+  background: #2a4570;
 }

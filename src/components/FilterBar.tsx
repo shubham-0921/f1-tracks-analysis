@@ -37,7 +37,7 @@ export default function FilterBar({
   total, filtered,
 }: FilterBarProps) {
   return (
-    <div className="sticky top-0 z-20 bg-[#0a0a0a]/95 backdrop-blur-md border-b border-[#1a1a1a]">
+    <div className="sticky top-0 z-20 bg-[#080d18]/95 backdrop-blur-md border-b border-[#132035]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
         <div className="flex flex-col sm:flex-row gap-3">
           {/* Search */}
@@ -53,8 +53,8 @@ export default function FilterBar({
               placeholder="Search circuit, city, country…"
               value={search}
               onChange={(e) => onSearch(e.target.value)}
-              className="w-full bg-[#111] border border-[#222] rounded-lg pl-10 pr-4 py-2 text-sm text-white
-                placeholder-gray-600 focus:outline-none focus:border-f1red/50 focus:bg-[#141414] transition-all"
+              className="w-full bg-[#0d1526] border border-[#1a2540] rounded-lg pl-10 pr-4 py-2 text-sm text-white
+                placeholder-[#2a4060] focus:outline-none focus:border-f1red/40 focus:bg-[#0f1a2e] transition-all"
             />
           </div>
 
@@ -79,9 +79,9 @@ export default function FilterBar({
         </div>
 
         {/* Results count */}
-        <p className="text-[11px] text-gray-600 mt-2 font-mono">
+        <p className="text-[11px] text-[#2a4060] mt-2 font-mono">
           SHOWING{' '}
-          <span className="text-gray-400 font-bold">{filtered}</span>
+          <span className="text-[#5a8aaa] font-bold">{filtered}</span>
           {' '}OF {total} CIRCUITS
         </p>
       </div>
@@ -98,10 +98,10 @@ function Select({ value, onChange, children }: {
     <select
       value={value}
       onChange={(e) => onChange(e.target.value)}
-      className="bg-[#111] border border-[#222] rounded-lg px-3 py-2 text-sm text-gray-400
-        focus:outline-none focus:border-f1red/50 transition-colors cursor-pointer appearance-none
-        pr-8 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM0YjUwNjMiIHN0cm9rZS13aWR0aD0iMiI+PHBhdGggZD0ibTYgOSA2IDYgNi02Ii8+PC9zdmc+')]
-        bg-no-repeat bg-[right_0.5rem_center] hover:border-[#333] hover:text-gray-300"
+      className="bg-[#0d1526] border border-[#1a2540] rounded-lg px-3 py-2 text-sm text-[#4a6a88]
+        focus:outline-none focus:border-f1red/40 transition-colors cursor-pointer appearance-none
+        pr-8 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMyYTQwNjAiIHN0cm9rZS13aWR0aD0iMiI+PHBhdGggZD0ibTYgOSA2IDYgNi02Ii8+PC9zdmc+')]
+        bg-no-repeat bg-[right_0.5rem_center] hover:border-[#2a3a5a] hover:text-[#7aaac8]"
     >
       {children}
     </select>

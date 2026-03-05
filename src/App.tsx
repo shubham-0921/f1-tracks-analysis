@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import Header from './components/Header';
 import FilterBar from './components/FilterBar';
 import CircuitCard from './components/CircuitCard';
@@ -51,7 +52,7 @@ export default function App() {
   }, [search, typeFilter, regionFilter, sortBy]);
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white">
+    <div className="min-h-screen bg-[#080d18] text-white">
       <Header />
       <FilterBar
         search={search}
@@ -87,8 +88,8 @@ export default function App() {
         )}
       </main>
 
-      <footer className="border-t border-[#1a1a1a] mt-16 py-8 text-center">
-        <p className="text-gray-600 text-xs font-mono uppercase tracking-[0.2em]">
+      <footer className="border-t border-[#132035] mt-16 py-8 text-center">
+        <p className="text-[#2a4060] text-xs font-mono uppercase tracking-[0.2em]">
           F1 Circuit Guide · 2026 Season ·{' '}
           <a
             href="https://www.formula1.com"
@@ -99,10 +100,11 @@ export default function App() {
             formula1.com
           </a>
         </p>
-        <p className="mt-1 text-[#333] text-xs">
+        <p className="mt-1 text-[#1a2e45] text-xs">
           All data compiled from official circuit websites, Formula 1, and Wikipedia.
         </p>
       </footer>
+      <Analytics />
     </div>
   );
 }

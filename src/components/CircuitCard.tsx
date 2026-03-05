@@ -6,9 +6,9 @@ interface CircuitCardProps {
 }
 
 const TYPE_STYLES: Record<Circuit['type'], string> = {
-  permanent: 'bg-blue-950/60 text-blue-300 border-blue-700/40',
-  street: 'bg-red-950/60 text-red-300 border-red-700/40',
-  temporary: 'bg-amber-950/60 text-amber-300 border-amber-700/40',
+  permanent: 'bg-sky-950/50 text-sky-400 border-sky-700/30',
+  street: 'bg-red-950/50 text-red-400 border-red-700/30',
+  temporary: 'bg-amber-950/50 text-amber-400 border-amber-700/30',
 };
 
 const TYPE_LABELS: Record<Circuit['type'], string> = {
@@ -17,6 +17,13 @@ const TYPE_LABELS: Record<Circuit['type'], string> = {
   temporary: 'Temporary',
 };
 
+const ExternalIcon = () => (
+  <svg className="w-3 h-3 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+  </svg>
+);
+
 export default function CircuitCard({ circuit }: CircuitCardProps) {
   const [expanded, setExpanded] = useState(false);
   const [photoLoaded, setPhotoLoaded] = useState(false);
@@ -24,22 +31,30 @@ export default function CircuitCard({ circuit }: CircuitCardProps) {
 
   const isHistoric = circuit.historicOnly;
 
+  // Surface up to 2 key links at the top
+  const officialLink = circuit.references.find(r =>
+    !r.url.includes('wikipedia') && !r.url.includes('formula1.com/en/results')
+  ) ?? circuit.references[0];
+  const f1Link = circuit.references.find(r =>
+    r.url.includes('formula1.com/en/racing')
+  );
+
   return (
     <article
-      className={`relative bg-[#111] border rounded-xl overflow-hidden transition-all duration-300 group ${
+      className={`relative bg-[#0d1526] border rounded-xl overflow-hidden transition-all duration-300 group ${
         isHistoric
-          ? 'border-amber-900/40 hover:border-amber-600/50 hover:shadow-[0_0_40px_-8px_rgba(217,119,6,0.2)]'
-          : 'border-[#222] hover:border-f1red/40 hover:shadow-[0_0_40px_-8px_rgba(225,6,0,0.2)]'
+          ? 'border-amber-900/40 hover:border-amber-600/50 hover:shadow-[0_0_40px_-8px_rgba(217,119,6,0.15)]'
+          : 'border-[#1a2540] hover:border-f1red/40 hover:shadow-[0_0_40px_-8px_rgba(225,6,0,0.15)]'
       }`}
     >
       {/* Top accent line */}
-      <div className={`h-px w-full ${isHistoric ? 'bg-gradient-to-r from-amber-500/60 via-amber-500/20 to-transparent' : 'bg-gradient-to-r from-f1red/70 via-f1red/20 to-transparent'}`} />
+      <div className={`h-px w-full ${isHistoric ? 'bg-gradient-to-r from-amber-500/50 via-amber-500/15 to-transparent' : 'bg-gradient-to-r from-f1red/60 via-f1red/15 to-transparent'}`} />
 
       {/* Historic banner */}
       {isHistoric && (
-        <div className="bg-amber-950/40 border-b border-amber-900/40 px-5 py-2 flex items-center gap-2">
+        <div className="bg-amber-950/30 border-b border-amber-900/30 px-5 py-2 flex items-center gap-2">
           <span className="text-amber-500 text-xs">◆</span>
-          <span className="text-amber-400/90 text-xs font-semibold uppercase tracking-[0.15em]">
+          <span className="text-amber-400/80 text-xs font-semibold uppercase tracking-[0.15em]">
             Historic Circuit — Not on 2026 Calendar
           </span>
         </div>
@@ -55,19 +70,15 @@ export default function CircuitCard({ circuit }: CircuitCardProps) {
             onLoad={() => setPhotoLoaded(true)}
             onError={() => setPhotoFailed(true)}
           />
-          {/* Skeleton while loading */}
           {!photoLoaded && (
-            <div className="absolute inset-0 bg-[#1a1a1a] animate-pulse" />
+            <div className="absolute inset-0 bg-[#0a1220] animate-pulse" />
           )}
-          {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#111] via-[#111]/30 to-transparent" />
-          {/* Top vignette */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent" />
-          {/* Caption badge */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0d1526] via-[#0d1526]/25 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-transparent" />
           {circuit.featurePhotoCaption && photoLoaded && (
             <div className="absolute bottom-3 left-4 right-4">
-              <span className="inline-flex items-center gap-1.5 text-white/75 text-xs font-medium bg-black/55 backdrop-blur-sm px-2.5 py-1 rounded-md border border-white/10">
-                <svg className="w-3 h-3 text-white/40 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <span className="inline-flex items-center gap-1.5 text-white/70 text-xs font-medium bg-black/50 backdrop-blur-sm px-2.5 py-1 rounded-md border border-white/10">
+                <svg className="w-3 h-3 text-white/35 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
@@ -86,7 +97,7 @@ export default function CircuitCard({ circuit }: CircuitCardProps) {
             <div className="min-w-0">
               <div className="flex items-center gap-2 flex-wrap mb-1">
                 {!isHistoric && (
-                  <span className="text-f1red/70 text-xs font-mono font-medium tracking-wider">
+                  <span className="text-f1red/60 text-xs font-mono font-medium tracking-wider">
                     R{String(circuit.calendarRound).padStart(2, '0')}
                   </span>
                 )}
@@ -94,24 +105,54 @@ export default function CircuitCard({ circuit }: CircuitCardProps) {
                   {TYPE_LABELS[circuit.type]}
                 </span>
               </div>
-              <h2 className="text-white font-bold text-lg leading-tight group-hover:text-gray-100 transition-colors">
+              <h2 className="text-white font-bold text-lg leading-tight">
                 {circuit.name}
               </h2>
-              <p className="text-gray-500 text-sm mt-0.5">{circuit.city}, {circuit.country}</p>
+              <p className="text-[#3a5a7a] text-sm mt-0.5">{circuit.city}, {circuit.country}</p>
             </div>
           </div>
 
           {/* Circuit length */}
-          <div className="flex-shrink-0 flex flex-col items-end gap-2">
-            <div className="text-right">
-              <span className="text-f1red font-black text-2xl leading-none tabular-nums">{circuit.lengthKm}</span>
-              <span className="text-gray-600 text-[10px] block mt-0.5 font-mono uppercase tracking-wider">km/lap</span>
-            </div>
+          <div className="flex-shrink-0 text-right">
+            <span className="text-f1red font-black text-2xl leading-none tabular-nums">{circuit.lengthKm}</span>
+            <span className="text-[#2a4060] text-[10px] block mt-0.5 font-mono uppercase tracking-wider">km/lap</span>
           </div>
         </div>
 
+        {/* Always-visible links */}
+        {circuit.references.length > 0 && (
+          <div className="flex flex-wrap gap-2 mb-4">
+            {officialLink && (
+              <a
+                href={officialLink.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold
+                  bg-f1red/10 border border-f1red/20 text-f1red/80
+                  hover:bg-f1red/20 hover:border-f1red/40 hover:text-white transition-all duration-150"
+              >
+                {officialLink.label}
+                <ExternalIcon />
+              </a>
+            )}
+            {f1Link && f1Link.url !== officialLink?.url && (
+              <a
+                href={f1Link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold
+                  bg-[#0a1220] border border-[#1a2f50] text-[#4a7aa0]
+                  hover:bg-[#0f1a2e] hover:border-[#2a4570] hover:text-[#7ab0d0] transition-all duration-150"
+              >
+                {f1Link.label}
+                <ExternalIcon />
+              </a>
+            )}
+          </div>
+        )}
+
         {/* Stats grid */}
-        <div className="grid grid-cols-4 gap-2 mt-4">
+        <div className="grid grid-cols-4 gap-2">
           <Stat label="Turns" value={String(circuit.turns)} />
           <Stat label="Built" value={String(circuit.builtYear)} />
           <Stat label="First F1" value={String(circuit.firstF1Race)} />
@@ -120,31 +161,31 @@ export default function CircuitCard({ circuit }: CircuitCardProps) {
       </div>
 
       {/* Lap record */}
-      <div className="px-5 py-3 border-t border-[#1e1e1e] bg-black/30">
+      <div className="px-5 py-3 border-t border-[#132035] bg-[#0a1220]/60">
         <div className="flex items-center gap-3">
-          <svg className="w-4 h-4 text-f1red/50 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg className="w-4 h-4 text-f1red/40 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
           <div>
-            <span className="text-gray-600 text-[10px] uppercase tracking-[0.15em] font-medium block">Lap Record</span>
+            <span className="text-[#2a4060] text-[10px] uppercase tracking-[0.15em] font-medium block">Lap Record</span>
             <p className="text-gray-200 text-sm mt-0.5">
               <span className="text-f1red font-bold font-mono text-base">{circuit.lapRecord}</span>
-              <span className="text-gray-500 text-xs ml-2">{circuit.lapRecordHolder} · {circuit.lapRecordYear}</span>
+              <span className="text-[#3a5a7a] text-xs ml-2">{circuit.lapRecordHolder} · {circuit.lapRecordYear}</span>
             </p>
           </div>
         </div>
       </div>
 
       {/* Designer / Contractor */}
-      <div className="px-5 py-3 border-t border-[#1e1e1e]">
+      <div className="px-5 py-3 border-t border-[#132035]">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div>
-            <span className="text-gray-600 text-[10px] uppercase tracking-[0.15em] font-medium block">Designer</span>
-            <p className="text-gray-400 text-sm mt-0.5 leading-snug">{circuit.designer}</p>
+            <span className="text-[#2a4060] text-[10px] uppercase tracking-[0.15em] font-medium block">Designer</span>
+            <p className="text-[#5a7a9a] text-sm mt-0.5 leading-snug">{circuit.designer}</p>
           </div>
           <div>
-            <span className="text-gray-600 text-[10px] uppercase tracking-[0.15em] font-medium block">Built by</span>
-            <p className="text-gray-400 text-sm mt-0.5 leading-snug">{circuit.contractor}</p>
+            <span className="text-[#2a4060] text-[10px] uppercase tracking-[0.15em] font-medium block">Built by</span>
+            <p className="text-[#5a7a9a] text-sm mt-0.5 leading-snug">{circuit.contractor}</p>
           </div>
         </div>
       </div>
@@ -154,15 +195,15 @@ export default function CircuitCard({ circuit }: CircuitCardProps) {
         onClick={() => setExpanded(!expanded)}
         className={`w-full flex items-center justify-between px-5 py-3 border-t transition-all duration-150 ${
           expanded
-            ? 'border-[#1e1e1e] text-white bg-white/[0.03]'
-            : 'border-[#1e1e1e] text-gray-500 hover:text-white hover:bg-white/[0.03]'
+            ? 'border-[#132035] text-[#7aaccc] bg-[#0a1220]/40'
+            : 'border-[#132035] text-[#2a4060] hover:text-[#5a8aaa] hover:bg-[#0a1220]/40'
         }`}
       >
         <span className="text-xs font-semibold uppercase tracking-[0.15em]">
           {expanded ? 'Show Less' : 'History & Iconic Details'}
         </span>
         <svg
-          className={`w-4 h-4 transition-transform duration-300 ${expanded ? 'rotate-180 text-f1red' : ''}`}
+          className={`w-4 h-4 transition-transform duration-300 ${expanded ? 'rotate-180 text-f1red/70' : ''}`}
           fill="none" viewBox="0 0 24 24" stroke="currentColor"
         >
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -171,23 +212,23 @@ export default function CircuitCard({ circuit }: CircuitCardProps) {
 
       {/* Expanded content */}
       {expanded && (
-        <div className="border-t border-[#1e1e1e] animate-in fade-in">
+        <div className="border-t border-[#132035] animate-in fade-in">
           {/* History */}
           <div className="px-5 py-5">
             <SectionHeader label="History" />
-            <p className="text-gray-400 text-sm leading-relaxed mt-3">{circuit.history}</p>
+            <p className="text-[#5a7a9a] text-sm leading-relaxed mt-3">{circuit.history}</p>
           </div>
 
           {/* Iconic features */}
-          <div className="px-5 pb-5 border-t border-[#1a1a1a] pt-5">
+          <div className="px-5 pb-5 border-t border-[#0f1e30] pt-5">
             <SectionHeader label="Iconic Features" />
             <ul className="mt-3 space-y-3">
               {circuit.iconicFeatures.map((feature, i) => (
                 <li key={i} className="flex gap-3 group/item">
-                  <span className="text-f1red font-mono text-[10px] font-bold mt-1 flex-shrink-0 opacity-60 group-hover/item:opacity-100 transition-opacity">
+                  <span className="text-f1red/50 font-mono text-[10px] font-bold mt-1 flex-shrink-0 group-hover/item:text-f1red/80 transition-colors">
                     {String(i + 1).padStart(2, '0')}
                   </span>
-                  <span className="text-gray-400 text-sm leading-snug group-hover/item:text-gray-300 transition-colors">
+                  <span className="text-[#5a7a9a] text-sm leading-snug group-hover/item:text-[#8aaac8] transition-colors">
                     {feature}
                   </span>
                 </li>
@@ -196,42 +237,43 @@ export default function CircuitCard({ circuit }: CircuitCardProps) {
           </div>
 
           {/* Direction + Capacity */}
-          <div className="px-5 pb-5 border-t border-[#1a1a1a] pt-4 grid grid-cols-2 gap-2">
-            <div className="bg-white/[0.03] border border-white/[0.06] rounded-lg p-3">
-              <span className="text-gray-600 text-[10px] uppercase tracking-[0.15em] font-medium block">Direction</span>
-              <p className="text-gray-300 text-sm font-semibold mt-1 capitalize">{circuit.direction}</p>
+          <div className="px-5 pb-5 border-t border-[#0f1e30] pt-4 grid grid-cols-2 gap-2">
+            <div className="bg-[#0a1220] border border-[#132035] rounded-lg p-3">
+              <span className="text-[#2a4060] text-[10px] uppercase tracking-[0.15em] font-medium block">Direction</span>
+              <p className="text-[#8aaac8] text-sm font-semibold mt-1 capitalize">{circuit.direction}</p>
             </div>
-            <div className="bg-white/[0.03] border border-white/[0.06] rounded-lg p-3">
-              <span className="text-gray-600 text-[10px] uppercase tracking-[0.15em] font-medium block">Capacity</span>
-              <p className="text-gray-300 text-sm font-semibold mt-1">
+            <div className="bg-[#0a1220] border border-[#132035] rounded-lg p-3">
+              <span className="text-[#2a4060] text-[10px] uppercase tracking-[0.15em] font-medium block">Capacity</span>
+              <p className="text-[#8aaac8] text-sm font-semibold mt-1">
                 {circuit.capacity.toLocaleString()}
               </p>
             </div>
           </div>
 
-          {/* References */}
-          <div className="px-5 pb-5 border-t border-[#1a1a1a] pt-4">
-            <SectionHeader label="Read More" />
-            <div className="flex flex-wrap gap-2 mt-3">
-              {circuit.references.map((ref) => (
-                <a
-                  key={ref.url}
-                  href={ref.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium
-                    bg-white/[0.04] border border-white/[0.08] text-gray-400
-                    hover:bg-f1red/15 hover:border-f1red/30 hover:text-white transition-all duration-150"
-                >
-                  {ref.label}
-                  <svg className="w-3 h-3 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </a>
-              ))}
+          {/* References — additional links not shown at top */}
+          {circuit.references.length > 2 && (
+            <div className="px-5 pb-5 border-t border-[#0f1e30] pt-4">
+              <SectionHeader label="More Links" />
+              <div className="flex flex-wrap gap-2 mt-3">
+                {circuit.references
+                  .filter(r => r.url !== officialLink?.url && r.url !== f1Link?.url)
+                  .map((ref) => (
+                    <a
+                      key={ref.url}
+                      href={ref.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium
+                        bg-[#0a1220] border border-[#1a2f50] text-[#4a6a88]
+                        hover:bg-[#0f1e30] hover:border-[#2a4070] hover:text-[#7aaac8] transition-all duration-150"
+                    >
+                      {ref.label}
+                      <ExternalIcon />
+                    </a>
+                  ))}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       )}
     </article>
@@ -240,9 +282,9 @@ export default function CircuitCard({ circuit }: CircuitCardProps) {
 
 function Stat({ label, value }: { label: string; value: string }) {
   return (
-    <div className="bg-white/[0.03] border border-white/[0.05] rounded-lg px-2 py-2.5 text-center">
-      <span className="text-gray-600 text-[9px] block uppercase tracking-[0.15em] font-medium">{label}</span>
-      <span className="text-gray-200 font-bold text-sm mt-0.5 block tabular-nums">{value}</span>
+    <div className="bg-[#0a1220] border border-[#132035] rounded-lg px-2 py-2.5 text-center">
+      <span className="text-[#2a4060] text-[9px] block uppercase tracking-[0.15em] font-medium">{label}</span>
+      <span className="text-[#c8dcea] font-bold text-sm mt-0.5 block tabular-nums">{value}</span>
     </div>
   );
 }
@@ -250,8 +292,8 @@ function Stat({ label, value }: { label: string; value: string }) {
 function SectionHeader({ label }: { label: string }) {
   return (
     <div className="flex items-center gap-2.5">
-      <div className="w-0.5 h-4 bg-f1red rounded-full flex-shrink-0" />
-      <h3 className="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-semibold">{label}</h3>
+      <div className="w-0.5 h-4 bg-f1red/70 rounded-full flex-shrink-0" />
+      <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#3a5a7a] font-semibold">{label}</h3>
     </div>
   );
 }
