@@ -22,9 +22,51 @@ export interface Circuit {
   history: string;
   references: { label: string; url: string }[];
   calendarRound: number;
+  historicOnly?: boolean;
 }
 
 export const circuits: Circuit[] = [
+  {
+    id: 'buddh',
+    name: 'Buddh International Circuit',
+    shortName: 'India',
+    country: 'India',
+    city: 'Greater Noida, Uttar Pradesh',
+    flag: '🇮🇳',
+    lengthKm: 5.125,
+    lapRecord: '1:27.249',
+    lapRecordHolder: 'Sebastian Vettel',
+    lapRecordYear: 2011,
+    turns: 16,
+    builtYear: 2011,
+    firstF1Race: 2011,
+    designer: 'Hermann Tilke',
+    contractor: 'Jaypee Sports International Ltd.',
+    type: 'permanent',
+    direction: 'clockwise',
+    altitudeM: 198,
+    capacity: 120000,
+    iconicFeatures: [
+      'India\'s first and only Formula 1 circuit — built to bring F1 to the world\'s second most populous nation',
+      'Spectacular Turn 3 — a long, sweeping, high-speed left-hander taken at around 260 km/h, widely praised by drivers',
+      'Built by Jaypee Group on 875 acres in the Yamuna Expressway Industrial Development Area (YEIDA)',
+      'The main straight is one of the longest in Asia — enabling speeds exceeding 320 km/h',
+      'State-of-the-art paddock infrastructure built to full FIA Grade 1 standards, rivalling any circuit globally at the time',
+      'The circuit combines a fast, sweeping first sector with a tight, technical stadium section in the final sector',
+      'Hosted three consecutive Indian Grand Prix — 2011, 2012 (won by Vettel both years), 2013',
+      'Sebastian Vettel clinched his fourth consecutive World Championship here in 2013',
+    ],
+    history:
+      'Designed by Hermann Tilke and built by Jaypee Sports International on 875 acres of land in Greater Noida — adjacent to the Yamuna Expressway — the Buddh International Circuit was constructed in just 900 days at a cost of approximately ₹1,600 crore (~$250 million USD). It hosted the Formula 1 Indian Grand Prix in 2011, 2012, and 2013, all of which were won by Sebastian Vettel (Red Bull Racing). The circuit was widely praised for its layout, facilities, and the quality of racing it produced. However, it was dropped from the F1 calendar after 2013 due to a combination of factors: a dispute over tax classification (Indian authorities taxed F1 as "entertainment" rather than "sport", resulting in massive import duties on team equipment), a lack of state government support, and ultimately the expiry of the race\'s contract with Formula 1. Despite multiple attempts to revive the Indian Grand Prix — including renewed negotiations as recently as 2023 — the circuit has hosted no F1 racing since. It remains FIA Grade 1 certified and continues to host local motorsport events.',
+    references: [
+      { label: 'Official Circuit Website', url: 'https://www.jaypeesports.com' },
+      { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Buddh_International_Circuit' },
+      { label: 'F1 History — Indian GP', url: 'https://www.formula1.com/en/results/2013/races/896/india' },
+      { label: 'The story of F1\'s India exit — Autosport', url: 'https://www.autosport.com/f1/news/why-india-lost-its-formula-1-grand-prix-4980416' },
+    ],
+    calendarRound: 0,
+    historicOnly: true,
+  },
   {
     id: 'bahrain',
     name: 'Bahrain International Circuit',
@@ -917,7 +959,7 @@ export const circuits: Circuit[] = [
 export const continents: Record<string, string[]> = {
   'Middle East': ['bahrain', 'jeddah', 'baku', 'losail', 'yas-marina'],
   'Europe': ['imola', 'monaco', 'barcelona', 'red-bull-ring', 'silverstone', 'hungaroring', 'spa', 'zandvoort', 'monza'],
-  'Asia-Pacific': ['suzuka', 'shanghai', 'singapore'],
+  'Asia-Pacific': ['suzuka', 'shanghai', 'singapore', 'buddh'],
   'Americas': ['miami', 'canada', 'cota', 'mexico', 'interlagos', 'las-vegas'],
   'Oceania': ['albert-park'],
 };

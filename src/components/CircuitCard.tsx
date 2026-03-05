@@ -22,9 +22,22 @@ export default function CircuitCard({ circuit }: CircuitCardProps) {
 
   return (
     <article
-      className="bg-f1card border border-f1border rounded-xl overflow-hidden
-        hover:border-f1red/40 transition-all duration-200 hover:shadow-lg hover:shadow-f1red/5 group"
+      className={`bg-f1card border rounded-xl overflow-hidden transition-all duration-200 hover:shadow-lg group ${
+        circuit.historicOnly
+          ? 'border-amber-900/50 hover:border-amber-600/50 hover:shadow-amber-900/10'
+          : 'border-f1border hover:border-f1red/40 hover:shadow-f1red/5'
+      }`}
     >
+      {/* Historic banner */}
+      {circuit.historicOnly && (
+        <div className="bg-amber-950/60 border-b border-amber-900/50 px-5 py-2 flex items-center gap-2">
+          <span className="text-amber-400 text-xs">◆</span>
+          <span className="text-amber-400 text-xs font-semibold uppercase tracking-wider">
+            Historic Circuit — Not on 2025 Calendar
+          </span>
+        </div>
+      )}
+
       {/* Card header */}
       <div className="p-5 pb-4">
         <div className="flex items-start justify-between gap-3 mb-3">
@@ -32,9 +45,11 @@ export default function CircuitCard({ circuit }: CircuitCardProps) {
             <span className="text-3xl flex-shrink-0">{circuit.flag}</span>
             <div className="min-w-0">
               <div className="flex items-center gap-2 flex-wrap">
-                <span className="text-gray-500 text-xs font-medium">
-                  Round {circuit.calendarRound}
-                </span>
+                {!circuit.historicOnly && (
+                  <span className="text-gray-500 text-xs font-medium">
+                    Round {circuit.calendarRound}
+                  </span>
+                )}
                 <span className={`text-xs px-2 py-0.5 rounded-full border font-medium ${TYPE_STYLES[circuit.type]}`}>
                   {TYPE_LABELS[circuit.type]}
                 </span>
