@@ -64,7 +64,6 @@ export const circuits: Circuit[] = [
     references: [
       { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Buddh_International_Circuit' },
       { label: 'F1 History — Indian GP', url: 'https://www.formula1.com/en/results/2013/races/896/india' },
-      { label: 'The story of F1\'s India exit — Autosport', url: 'https://www.autosport.com/f1/news/why-india-lost-its-formula-1-grand-prix-4980416' },
     ],
     calendarRound: 0,
     historicOnly: true,
