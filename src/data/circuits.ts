@@ -1072,6 +1072,35 @@ export const circuits: Circuit[] = [
   },
 ];
 
+export const mapsUrls: Record<string, string> = {
+  'buddh':       'https://www.google.com/maps/@28.3487,77.5326,15z/data=!3m1!1e3',
+  'bahrain':     'https://www.google.com/maps/@26.0325,50.5106,15z/data=!3m1!1e3',
+  'jeddah':      'https://www.google.com/maps/@21.6319,39.1044,15z/data=!3m1!1e3',
+  'albert-park': 'https://www.google.com/maps/@-37.8497,144.9680,15z/data=!3m1!1e3',
+  'suzuka':      'https://www.google.com/maps/@34.8431,136.5406,15z/data=!3m1!1e3',
+  'shanghai':    'https://www.google.com/maps/@31.3389,121.2198,15z/data=!3m1!1e3',
+  'miami':       'https://www.google.com/maps/@25.9581,-80.2389,15z/data=!3m1!1e3',
+  'imola':       'https://www.google.com/maps/@44.3439,11.7167,15z/data=!3m1!1e3',
+  'monaco':      'https://www.google.com/maps/@43.7347,7.4208,15z/data=!3m1!1e3',
+  'canada':      'https://www.google.com/maps/@45.5000,-73.5228,15z/data=!3m1!1e3',
+  'barcelona':   'https://www.google.com/maps/@41.5700,2.2611,15z/data=!3m1!1e3',
+  'red-bull-ring':'https://www.google.com/maps/@47.2197,14.7647,15z/data=!3m1!1e3',
+  'silverstone': 'https://www.google.com/maps/@52.0786,-1.0169,14z/data=!3m1!1e3',
+  'hungaroring': 'https://www.google.com/maps/@47.5789,19.2486,15z/data=!3m1!1e3',
+  'spa':         'https://www.google.com/maps/@50.4372,5.9714,14z/data=!3m1!1e3',
+  'zandvoort':   'https://www.google.com/maps/@52.3888,4.5409,15z/data=!3m1!1e3',
+  'monza':       'https://www.google.com/maps/@45.6156,9.2811,14z/data=!3m1!1e3',
+  'baku':        'https://www.google.com/maps/@40.3724,49.8533,15z/data=!3m1!1e3',
+  'singapore':   'https://www.google.com/maps/@1.2914,103.8639,15z/data=!3m1!1e3',
+  'cota':        'https://www.google.com/maps/@30.1328,-97.6411,14z/data=!3m1!1e3',
+  'mexico':      'https://www.google.com/maps/@19.4042,-99.0907,15z/data=!3m1!1e3',
+  'interlagos':  'https://www.google.com/maps/@-23.7036,-46.6997,15z/data=!3m1!1e3',
+  'las-vegas':   'https://www.google.com/maps/@36.1147,-115.1728,15z/data=!3m1!1e3',
+  'losail':      'https://www.google.com/maps/@25.4900,51.4542,15z/data=!3m1!1e3',
+  'yas-marina':  'https://www.google.com/maps/@24.4672,54.6031,15z/data=!3m1!1e3',
+  'madrid':      'https://www.google.com/maps/@40.4715,-3.6097,15z/data=!3m1!1e3',
+};
+
 export const continents: Record<string, string[]> = {
   'Middle East': ['bahrain', 'jeddah', 'baku', 'losail', 'yas-marina'],
   'Europe': ['imola', 'monaco', 'barcelona', 'madrid', 'red-bull-ring', 'silverstone', 'hungaroring', 'spa', 'zandvoort', 'monza'],

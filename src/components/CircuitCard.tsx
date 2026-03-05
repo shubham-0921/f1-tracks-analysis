@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import type { Circuit } from '../data/circuits';
+import { mapsUrls } from '../data/circuits';
 
 interface CircuitCardProps {
   circuit: Circuit;
@@ -38,6 +39,7 @@ export default function CircuitCard({ circuit }: CircuitCardProps) {
   const f1Link = circuit.references.find(r =>
     r.url.includes('formula1.com/en/racing')
   );
+  const mapsUrl = mapsUrls[circuit.id];
 
   return (
     <article
@@ -146,6 +148,24 @@ export default function CircuitCard({ circuit }: CircuitCardProps) {
               >
                 {f1Link.label}
                 <ExternalIcon />
+              </a>
+            )}
+            {mapsUrl && (
+              <a
+                href={mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold
+                  bg-[#0a1e14] border border-[#1a3d28] text-[#3a8a58]
+                  hover:bg-[#0d2a1c] hover:border-[#2a6040] hover:text-[#5ab878] transition-all duration-150"
+              >
+                Aerial View
+                <svg className="w-3 h-3 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
               </a>
             )}
           </div>
