@@ -24,6 +24,8 @@ export interface Circuit {
   calendarRound: number;
   historicOnly?: boolean;
   imageUrl?: string;
+  featurePhotoUrl?: string;
+  featurePhotoCaption?: string;
 }
 
 export const circuits: Circuit[] = [
@@ -68,6 +70,8 @@ export const circuits: Circuit[] = [
     calendarRound: 0,
     historicOnly: true,
     imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Buddh_International_Circuit.svg',
+    featurePhotoUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Buddh_International_Circuit_India_T3.jpg',
+    featurePhotoCaption: 'The sweeping Turn 3 complex — a 260 km/h left-hander loved by drivers',
   },
   {
     id: 'bahrain',
@@ -106,6 +110,8 @@ export const circuits: Circuit[] = [
     ],
     calendarRound: 4,
     imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bahrain_International_Circuit--2004.svg',
+    featurePhotoUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/BahrainInternationalCircuit.jpg',
+    featurePhotoCaption: 'The Bahrain International Circuit at twilight in the Sakhir desert',
   },
   {
     id: 'jeddah',
@@ -144,6 +150,8 @@ export const circuits: Circuit[] = [
     ],
     calendarRound: 5,
     imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Jeddah_Corniche_Circuit.svg',
+    featurePhotoUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Jeddah_Corniche_Circuit_2021_aerial.jpg',
+    featurePhotoCaption: 'The fastest street circuit in F1 — 27 corners along the Red Sea Corniche',
   },
   {
     id: 'albert-park',
@@ -182,6 +190,8 @@ export const circuits: Circuit[] = [
     ],
     calendarRound: 1,
     imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Albert_Park_circuit_2022.svg',
+    featurePhotoUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Albert_Park_Melbourne_Australia.jpg',
+    featurePhotoCaption: 'Albert Park Lake — the picturesque backdrop of the Australian Grand Prix',
   },
   {
     id: 'suzuka',
@@ -220,6 +230,8 @@ export const circuits: Circuit[] = [
     ],
     calendarRound: 3,
     imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Suzuka_circuit_2005.svg',
+    featurePhotoUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Suzuka_International_Racing_Course_S-curve.jpg',
+    featurePhotoCaption: 'The iconic S-curves and the unique figure-of-eight overpass bridge',
   },
   {
     id: 'shanghai',
@@ -257,6 +269,8 @@ export const circuits: Circuit[] = [
     ],
     calendarRound: 2,
     imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Shanghai_International_Circuit.svg',
+    featurePhotoUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Shanghai_International_Circuit_2006.jpg',
+    featurePhotoCaption: 'The snail-shell Turn 1–2 complex — inspired by the Chinese character "Shang"',
   },
   {
     id: 'miami',
@@ -295,6 +309,8 @@ export const circuits: Circuit[] = [
     ],
     calendarRound: 6,
     imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Miami_International_Autodrome_circuit.svg',
+    featurePhotoUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Miami_International_Autodrome_fake_marina.jpg',
+    featurePhotoCaption: 'The famous fake marina — complete with fake yachts built for aesthetic glamour',
   },
   {
     id: 'imola',
@@ -334,6 +350,8 @@ export const circuits: Circuit[] = [
     calendarRound: 0,
     historicOnly: true,
     imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Imola_circuit_2007.svg',
+    featurePhotoUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Autodromo_Enzo_Ferrari_Imola_2006.jpg',
+    featurePhotoCaption: 'The Tamburello chicane — site of Senna\'s fatal 1994 accident, now a safety chicane',
   },
   {
     id: 'monaco',
@@ -372,6 +390,8 @@ export const circuits: Circuit[] = [
     ],
     calendarRound: 8,
     imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Circuit_de_Monaco.svg',
+    featurePhotoUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Monaco_Grand_Prix_Circuit_2015.jpg',
+    featurePhotoCaption: 'The Monte Carlo harbour — superyachts line the Hercules Port during race week',
   },
   {
     id: 'canada',
@@ -410,6 +430,8 @@ export const circuits: Circuit[] = [
     ],
     calendarRound: 7,
     imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Circuit_Gilles_Villeneuve_2011.svg',
+    featurePhotoUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Circuit_Gilles_Villeneuve_Montreal_aerial.jpg',
+    featurePhotoCaption: 'Île Notre-Dame — the artificial island built from Montreal Metro excavation soil',
   },
   {
     id: 'barcelona',
@@ -448,6 +470,8 @@ export const circuits: Circuit[] = [
     ],
     calendarRound: 9,
     imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Circuit_de_Barcelona-Catalunya_2009.svg',
+    featurePhotoUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Circuit_de_Barcelona-Catalunya.jpg',
+    featurePhotoCaption: 'Turn 3 (Renault) with sweeping views over the Catalan plains',
   },
   {
     id: 'red-bull-ring',
@@ -486,6 +510,8 @@ export const circuits: Circuit[] = [
     ],
     calendarRound: 10,
     imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Red_Bull_Ring_2011.svg',
+    featurePhotoUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Red_Bull_Ring_aerial_2011.jpg',
+    featurePhotoCaption: 'The Red Bull Ring nestled in a natural valley in the Styrian Alps',
   },
   {
     id: 'silverstone',
@@ -524,6 +550,8 @@ export const circuits: Circuit[] = [
     ],
     calendarRound: 11,
     imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Silverstone_circuit_2010.svg',
+    featurePhotoUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Silverstone_Circuit.jpg',
+    featurePhotoCaption: 'Maggotts–Becketts–Chapel — the greatest sequence of corners in motorsport',
   },
   {
     id: 'hungaroring',
@@ -562,6 +590,8 @@ export const circuits: Circuit[] = [
     ],
     calendarRound: 13,
     imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Hungaroring_2009.svg',
+    featurePhotoUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Hungaroring_aerial.jpg',
+    featurePhotoCaption: 'Natural amphitheatre — 70% of the track visible from the main grandstand',
   },
   {
     id: 'spa',
@@ -600,6 +630,8 @@ export const circuits: Circuit[] = [
     ],
     calendarRound: 12,
     imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Spa-Francorchamps_2004.svg',
+    featurePhotoUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Spa-Francorchamps_Eau_Rouge_Raidillon.jpg',
+    featurePhotoCaption: 'Eau Rouge / Raidillon — the most iconic and feared corner sequence in all of motorsport',
   },
   {
     id: 'zandvoort',
@@ -638,6 +670,8 @@ export const circuits: Circuit[] = [
     ],
     calendarRound: 14,
     imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Circuit_Zandvoort_2020.svg',
+    featurePhotoUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Circuit_Zandvoort_banked_corner.jpg',
+    featurePhotoCaption: 'The steeply banked Hugenholtz corner — 18 degrees, set among the North Sea dunes',
   },
   {
     id: 'monza',
@@ -676,6 +710,8 @@ export const circuits: Circuit[] = [
     ],
     calendarRound: 15,
     imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Monza_track_map.svg',
+    featurePhotoUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Monza_Sopraelevata.jpg',
+    featurePhotoCaption: 'The historic 1955 banking — a relic of Monza\'s oval era, still standing today',
   },
   {
     id: 'baku',
@@ -714,6 +750,8 @@ export const circuits: Circuit[] = [
     ],
     calendarRound: 17,
     imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Baku_City_Circuit_2016.svg',
+    featurePhotoUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Baku_City_Circuit_castle_section.jpg',
+    featurePhotoCaption: 'The 7.6m-wide castle section — threading through UNESCO-listed medieval fortress walls',
   },
   {
     id: 'singapore',
@@ -752,6 +790,8 @@ export const circuits: Circuit[] = [
     ],
     calendarRound: 18,
     imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Singapore_street_circuit_2010.svg',
+    featurePhotoUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Singapore_Grand_Prix_Marina_Bay_night.jpg',
+    featurePhotoCaption: 'F1\'s original night race — 1,500 floodlights illuminate Marina Bay and the city skyline',
   },
   {
     id: 'cota',
@@ -790,6 +830,8 @@ export const circuits: Circuit[] = [
     ],
     calendarRound: 19,
     imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Circuit_of_the_Americas.svg',
+    featurePhotoUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Circuit_of_the_Americas_Turn_1.jpg',
+    featurePhotoCaption: 'Turn 1 — a 41-metre blind uphill climb to the most dramatic hairpin in F1',
   },
   {
     id: 'mexico',
@@ -828,6 +870,8 @@ export const circuits: Circuit[] = [
     ],
     calendarRound: 20,
     imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Aut%C3%B3dromo_Hermanos_Rodr%C3%ADguez_2015.svg',
+    featurePhotoUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Autodromo_Hermanos_Rodriguez_Foro_Sol.jpg',
+    featurePhotoCaption: 'The Foro Sol stadium section — a 65,000-seat baseball stadium built into the circuit',
   },
   {
     id: 'interlagos',
@@ -866,6 +910,8 @@ export const circuits: Circuit[] = [
     ],
     calendarRound: 21,
     imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Circuit_Interlagos.svg',
+    featurePhotoUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Autodromo_Jose_Carlos_Pace_Interlagos.jpg',
+    featurePhotoCaption: 'The Senna S — the iconic double-apex opening complex renamed for Ayrton Senna',
   },
   {
     id: 'las-vegas',
@@ -904,6 +950,8 @@ export const circuits: Circuit[] = [
     ],
     calendarRound: 22,
     imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Las_Vegas_Street_Circuit_2023.svg',
+    featurePhotoUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Las_Vegas_Strip_night_aerial.jpg',
+    featurePhotoCaption: 'The main straight along the Strip — past the Bellagio, Caesars Palace and MGM Grand',
   },
   {
     id: 'losail',
@@ -942,6 +990,8 @@ export const circuits: Circuit[] = [
     ],
     calendarRound: 23,
     imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Losail_circuit.svg',
+    featurePhotoUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Losail_International_Circuit_night.jpg',
+    featurePhotoCaption: 'Losail fully floodlit — the entire 5.38 km illuminated for desert night racing',
   },
   {
     id: 'yas-marina',
@@ -980,6 +1030,8 @@ export const circuits: Circuit[] = [
     ],
     calendarRound: 24,
     imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Yas_Marina_circuit_2021.svg',
+    featurePhotoUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Yas_Viceroy_Hotel_Abu_Dhabi.jpg',
+    featurePhotoCaption: 'The W Abu Dhabi hotel — F1 cars pass beneath its LED-clad bridge over the circuit',
   },
   {
     id: 'madrid',
@@ -1019,6 +1071,8 @@ export const circuits: Circuit[] = [
     ],
     calendarRound: 16,
     imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/IFEMA_Madrid_Street_Circuit.svg',
+    featurePhotoUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/IFEMA_Madrid_exposition_centre.jpg',
+    featurePhotoCaption: 'The IFEMA Madrid exhibition complex — the circuit threads through its halls and plazas',
   },
 ];
 
