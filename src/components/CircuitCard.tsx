@@ -101,19 +101,8 @@ export default function CircuitCard({ circuit }: CircuitCardProps) {
             </div>
           </div>
 
-          {/* Circuit layout + length */}
+          {/* Circuit length */}
           <div className="flex-shrink-0 flex flex-col items-end gap-2">
-            {circuit.imageUrl && (
-              <div className="w-20 h-14 rounded-lg overflow-hidden bg-black/60 border border-white/[0.08] flex items-center justify-center p-1.5">
-                <img
-                  src={circuit.imageUrl}
-                  alt={`${circuit.name} layout`}
-                  className="w-full h-full object-contain opacity-60 group-hover:opacity-90 transition-opacity duration-300"
-                  style={{ filter: 'invert(1) sepia(1) saturate(3) hue-rotate(320deg) brightness(0.8)' }}
-                  onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-                />
-              </div>
-            )}
             <div className="text-right">
               <span className="text-f1red font-black text-2xl leading-none tabular-nums">{circuit.lengthKm}</span>
               <span className="text-gray-600 text-[10px] block mt-0.5 font-mono uppercase tracking-wider">km/lap</span>
